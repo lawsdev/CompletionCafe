@@ -17,10 +17,14 @@ A place to keep record of your accomplishments, in progress or complete. A websi
 
 ## Features
 
--  Task Record
+-  Task record
    - Record your upcoming tasks 
    - Tag them ^^ by user-defined category (i.e. Job, Art), date, and completion status
    - Add a short description and some notes
+- Retrieve entered tasks
+   - Sort previously entered tasks by their tags
+   - Edit them if needed
+   - Mark their completion status
 -  Get rewarded with a cup of coffee 
    - As you mark a task as complete, a cup of coffee is delivered at the bottom of the screen
 
