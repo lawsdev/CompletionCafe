@@ -10,6 +10,5 @@ public class Task
     public int Date { get; set; }
     //regex expression ^^
     public string Description { get; set; }
-    public string Notes { get; set; }
-    
+    public string Notes { get; set; }   
 }
