@@ -9,5 +9,5 @@ public class Context : DbContext
         options.UseSqlite(@"Data Source=CompletionCafe.db");
     }
    
-   public DbSet<Task>? TaskList { get;set; }
+   public DbSet<Accomplishment>? Accomplishments { get;set; }
 }

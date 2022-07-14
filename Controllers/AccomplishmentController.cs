@@ -8,87 +8,87 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CompletionCafe.Controllers
 {
-    public class TaskController : Controller
+    public class AccomplishmentController : Controller
     {
         private readonly Context _context;
 
-        public TaskController(Context context)
+        public AccomplishmentController(Context context)
         {
             _context = context;
         }
 
-        // GET: Task
+        // GET: Accomplishment
         public async Task<IActionResult> Index()
         {
-              return _context.TaskList != null ? 
-                          View(await _context.TaskList.ToListAsync()) :
-                          Problem("Entity set 'Context.TaskList'  is null.");
+              return _context.Accomplishments != null ? 
+                          View(await _context.Accomplishments.ToListAsync()) :
+                          Problem("Entity set 'Context.Accomplishments'  is null.");
         }
 
-        // GET: Task/Details/5
+        // GET: Accomplishment/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.TaskList == null)
+            if (id == null || _context.Accomplishments == null)
             {
                 return NotFound();
             }
 
-            var task = await _context.TaskList
+            var accomplishment = await _context.Accomplishments
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (task == null)
+            if (accomplishment == null)
             {
                 return NotFound();
             }
 
-            return View(task);
+            return View(accomplishment);
         }
 
-        // GET: Task/Create
+        // GET: Accomplishment/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Task/Create
+        // POST: Accomplishment/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,Description,Notes")] Task task)
+        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(task);
+                _context.Add(accomplishment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(task);
+            return View(accomplishment);
         }
 
-        // GET: Task/Edit/5
+        // GET: Accomplishment/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.TaskList == null)
+            if (id == null || _context.Accomplishments == null)
             {
                 return NotFound();
             }
 
-            var task = await _context.TaskList.FindAsync(id);
-            if (task == null)
+            var accomplishment = await _context.Accomplishments.FindAsync(id);
+            if (accomplishment == null)
             {
                 return NotFound();
             }
-            return View(task);
+            return View(accomplishment);
         }
 
-        // POST: Task/Edit/5
+        // POST: Accomplishment/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Category,Status,Date,Description,Notes")] Task task)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
         {
-            if (id != task.ID)
+            if (id != accomplishment.ID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace CompletionCafe.Controllers
             {
                 try
                 {
-                    _context.Update(task);
+                    _context.Update(accomplishment);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TaskExists(task.ID))
+                    if (!AccomplishmentExists(accomplishment.ID))
                     {
                         return NotFound();
                     }
@@ -113,49 +113,49 @@ namespace CompletionCafe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(task);
+            return View(accomplishment);
         }
 
-        // GET: Task/Delete/5
+        // GET: Accomplishment/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.TaskList == null)
+            if (id == null || _context.Accomplishments == null)
             {
                 return NotFound();
             }
 
-            var task = await _context.TaskList
+            var accomplishment = await _context.Accomplishments
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (task == null)
+            if (accomplishment == null)
             {
                 return NotFound();
             }
 
-            return View(task);
+            return View(accomplishment);
         }
 
-        // POST: Task/Delete/5
+        // POST: Accomplishment/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TaskList == null)
+            if (_context.Accomplishments == null)
             {
-                return Problem("Entity set 'Context.TaskList'  is null.");
+                return Problem("Entity set 'Context.Accomplishments'  is null.");
             }
-            var task = await _context.TaskList.FindAsync(id);
-            if (task != null)
+            var accomplishment = await _context.Accomplishments.FindAsync(id);
+            if (accomplishment != null)
             {
-                _context.TaskList.Remove(task);
+                _context.Accomplishments.Remove(accomplishment);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TaskExists(int id)
+        private bool AccomplishmentExists(int id)
         {
-          return (_context.TaskList?.Any(e => e.ID == id)).GetValueOrDefault();
+          return (_context.Accomplishments?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }
