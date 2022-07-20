@@ -9,6 +9,6 @@ public class Accomplishment
     public bool Status { get; set; }
     public int Date { get; set; }
     //regex expression ^^
-    public string Description { get; set; }
-    public string Notes { get; set; }   
+    public string? Description { get; set; }
+    public string? Notes { get; set; }   
 }
