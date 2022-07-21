@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Linq.Expressions;
 using System.ComponentModel.DataAnnotations;
 
 public class Accomplishment 
@@ -8,7 +11,7 @@ public class Accomplishment
     //category should be user defined
     public bool Status { get; set; }
     public int Date { get; set; }
-    //regex expression ^^
+    //regex expression ^^s
     public string? Description { get; set; }
     public string? Notes { get; set; }   
 }

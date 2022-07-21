@@ -21,29 +21,26 @@ namespace CompletionCafe.Controllers;
                           Problem("Entity set 'Context.Accomplishments'  is null.");
         }
 
-        // // GET: Accomplishment/Details/5
-        // public async Task<IActionResult> Details(int? id)
-        // {
-        //     if (id == null || _context.Accomplishments == null)
-        //     {
-        //         return NotFound();
-        //     }
+        public async Task<IActionResult> Sort(int? id)
+        {
+            if (id == null || _context.Accomplishments == null)
+            {
+                return NotFound();
+            }
 
-        //     var accomplishment = await _context.Accomplishments
-        //         .FirstOrDefaultAsync(m => m.ID == id);
-        //     if (accomplishment == null)
-        //     {
-        //         return NotFound();
-        //     }
+            var accomplishment = await _context.Accomplishments
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (accomplishment == null)
+            {
+                return NotFound();
+            }
 
-        //     return View(accomplishment);
-        // }
+            return View(accomplishment);
+        }
 
-        // // GET: Accomplishment/Create
-        // public IActionResult Create()
-        // {
-        //     return View();
-        // }
+        
+
+       
 
         // // POST: Accomplishment/Create
         // // To protect from overposting attacks, enable the specific properties you want to bind to.
