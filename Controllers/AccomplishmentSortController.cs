@@ -14,29 +14,58 @@ namespace CompletionCafe.Controllers;
             {
                 _context = context;
             }
-        public async Task<IActionResult> Sort()
-        {
-              return _context.Accomplishments != null ? 
-                          View(await _context.Accomplishments.ToListAsync()) :
-                          Problem("Entity set 'Context.Accomplishments'  is null.");
-        }
 
-        public async Task<IActionResult> Sort(int? id)
-        {
-            if (id == null || _context.Accomplishments == null)
-            {
-                return NotFound();
-            }
+//Sort Function: LINQ query
+    public async Task<IActionResult> Sort(string sortOrder)
+{
+    ViewData["CategorySortParm"] = sortOrder == "Category" ? "category_desc" : "Category";
+    ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+    ViewData["StatusSortParm"] = sortOrder == "Status" ? "Unfinished" : "Status";
+    var accomplishments = from s in _context.Accomplishments
+                   select s;
+    switch (sortOrder)
+    {
+        case "Category"://category ascending
+            accomplishments = accomplishments.OrderBy(s => s.Category);
+            break;
+        case "category_desc"://category descending
+            accomplishments = accomplishments.OrderByDescending(s => s.Category);
+            break;
+        case "Complete"://bool status complete
+            accomplishments = accomplishments.OrderByDescending(s => s.Status);
+            break;
+        case "Unfinished"://bool status incomplete
+            accomplishments = accomplishments.OrderBy(s => s.Status);
+            break;
+        case "Date"://date ascending
+            accomplishments = accomplishments.OrderBy(s => s.Date);
+            break;
+        case "date_desc"://date descending
+            accomplishments = accomplishments.OrderByDescending(s => s.Date);
+            break;
+        default:
+            accomplishments = accomplishments.OrderBy(s => s.ID);
+            break;
+    }
+    return View(await accomplishments.AsNoTracking().ToListAsync());
+}
 
-            var accomplishment = await _context.Accomplishments
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (accomplishment == null)
-            {
-                return NotFound();
-            }
+        // public async Task<IActionResult> Sort(int? id)
+        // {
+        //     if (id == null || _context.Accomplishments == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-            return View(accomplishment);
-        }
+        //     var accomplishment = await _context.Accomplishments
+        //         .FirstOrDefaultAsync(m => m.ID == id);
+        //     if (accomplishment == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     return View(accomplishment);
+        // }
 
         
 

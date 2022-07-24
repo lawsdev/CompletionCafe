@@ -1,5 +1,9 @@
 @model IEnumerable<Accomplishment>
 
+@Html.DropDownListFor(m => m.Croissant,
+            new SelectList(Enum.GetValues(typeof(CroissantBox))), 
+            "Select Gender")
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -28,7 +32,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.Notes)
             </th>
-            <th></th>
+            <th>
+            <select class="form-control" id="Section" name="Section">
+            <option>Select Gender</option> 
+            <option>Male</option> 
+            <option>Female</option> 
+            </select>
+
+</th>
         </tr>
     </thead>
     <tbody>

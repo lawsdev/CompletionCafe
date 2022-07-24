@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 public class Accomplishment 
@@ -14,4 +15,14 @@ public class Accomplishment
     //regex expression ^^s
     public string? Description { get; set; }
     public string? Notes { get; set; }   
+
+// Drop down practice
+    public CroissantBox Croissant { get; set; }
+}
+
+public enum CroissantBox {
+    
+    Burger,
+    Art
+
 }

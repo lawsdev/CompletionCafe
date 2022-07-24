@@ -24,6 +24,7 @@ namespace CompletionCafe.Controllers
                           View(await _context.Accomplishments.ToListAsync()) :
                           Problem("Entity set 'Context.Accomplishments'  is null.");
         }
+        
 
         // GET: Accomplishment/Details/5
         public async Task<IActionResult> Details(int? id)
