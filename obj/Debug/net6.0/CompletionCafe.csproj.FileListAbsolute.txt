@@ -568,3 +568,10 @@ C:\Users\Bella\source\Completion Cafe\CompletionCafe\obj\Debug\net6.0\Completion
 C:\Users\Bella\source\Completion Cafe\CompletionCafe\obj\Debug\net6.0\CompletionCafe.genruntimeconfig.cache
 C:\Users\Bella\source\Completion Cafe\CompletionCafe\obj\Debug\net6.0\scopedcss\Views\Accomplishment\Index.cshtml.rz.scp.css
 C:\Users\Bella\source\Completion Cafe\CompletionCafe\obj\Debug\net6.0\scopedcss\Views\AccomplishmentSort\Sort.cshtml.rz.scp.css
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Bella\source\Completion Cafe\CompletionCafe\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

@@ -16,13 +16,16 @@ public class Accomplishment
     public string? Description { get; set; }
     public string? Notes { get; set; }   
 
-// Drop down practice
-    public CroissantBox Croissant { get; set; }
 }
 
-public enum CroissantBox {
-    
-    Burger,
-    Art
+public class UserCategory
+{
+    [Key]
+    public string UserDefinedCategory { get; set; }
+}
 
+public class Dt 
+{
+    [Key]
+    public DateTime Dtview { get; set; }
 }
