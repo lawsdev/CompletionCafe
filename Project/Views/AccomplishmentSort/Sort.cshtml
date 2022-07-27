@@ -5,6 +5,7 @@
 }
 
 <h1 class="booger" style="color:green;">Sort</h1>
+<p>@ViewBag.CurrentTime</p>
 
 <table class="table">
         <tr>
@@ -28,8 +29,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
+            <td title="@ViewBag.CurrentTime">
+                @ViewBag.CurrentTime days until @Html.DisplayFor(modelItem => item.Date) 
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)

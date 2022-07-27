@@ -22,5 +22,5 @@ A place to keep record of your accomplishments, in progress or complete. A websi
 - DateTime of page (when loaded) displayed on screen for convenience and urgence. 
 - **DateTime matched (regex)** with future entries to show how long you have left to complete the task.
 - Entries are sortable with the help of a **LINQ query.**
-- Store entries **written and read from a SQL database** for ongoing projects.
+- Store entries **written and read from an SQL database** for ongoing projects.
 

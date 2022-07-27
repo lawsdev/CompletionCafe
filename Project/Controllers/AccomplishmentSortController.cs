@@ -22,6 +22,8 @@ namespace CompletionCafe.Controllers
     //Use a LINQ query to retrieve information from a data structure (such as a list or array) or file
         public async Task<IActionResult> Sort(string sortOrder)
         {
+        thisDay();
+
         ViewData["CategorySortParm"] = sortOrder == "Category" ? "category_desc" : "Category";
         ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
         ViewData["StatusSortParm"] = sortOrder == "Status" ? "Unfinished" : "Status";
@@ -54,11 +56,22 @@ namespace CompletionCafe.Controllers
         return View(await accomplishments.AsNoTracking().ToListAsync());
     }
 
+        public ActionResult thisDay()
+            {
+                var Dt = DateTime.Now;
+                string strDt = Dt.ToString("D");
+                ViewBag.CurrentTime = strDt;
+
+                return View();
+            }
+    
     private bool AccomplishmentExists(int id)
             {
             return (_context.Accomplishments?.Any(e => e.ID == id)).GetValueOrDefault();
             }
     }
+
+    
 }
 
 

@@ -45,12 +45,6 @@ namespace CompletionCafe.Controllers
             return View(accomplishment);
         }
 
-        // GET: Accomplishment/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
         public ActionResult thisDay()
         {
             var Dt = DateTime.Now;
@@ -59,13 +53,41 @@ namespace CompletionCafe.Controllers
 
             return View();
         }
+        
+        // GET: Accomplishment/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         // POST: Accomplishment/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
+        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,DaysLeft,Description,Notes")] Accomplishment accomplishment)
+        {
+            if (ModelState.IsValid)
+            {
+
+                _context.Add(accomplishment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(accomplishment);
+        }
+
+
+
+        //CreatePartial
+        public IActionResult CreatePartial()
+        {
+            return PartialView("_Create");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreatePartial([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
         {
             if (ModelState.IsValid)
             {
@@ -75,6 +97,7 @@ namespace CompletionCafe.Controllers
             }
             return View(accomplishment);
         }
+
 
         // GET: Accomplishment/Edit/5
         public async Task<IActionResult> Edit(int? id)
