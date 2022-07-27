@@ -2,38 +2,25 @@
 
 
 ## Overview
-A place to keep record of your accomplishments, in progress or complete. A website written in C# that stores user data to log your tasks and reward you with a cup of coffee. 
+A place to keep record of your accomplishments, in progress or complete. A website written in C# that stores user data to log your tasks and reward you with a cup of coffee or a pastry. 
 
 ## Technical Summary
 
 -  **Backend:** C# 
 -  **Framework:** ASP.NET Core MVC
 
-## Getting Started
+## Main Function
 
-1. Clone the project
-2. Write C# and incorporate into ASP.NET 
-3. Scaffold an initial migration
+- Create new entries: assign them a category, completion status, deadline, description, and notes. 
+- Sort your recorded entries by any of their properties to check out what you have upcoming - or look at your previous accomplishments.
+- Mark the entries as complete and get the sweet dopamine of a coffee or donut on screen!
 
 ## Features
 
--  Task record
-   - Record your upcoming tasks 
-   - Tag them ^^ by user-defined category (i.e. Job, Art), date, and completion status
-   - Add a short description and some notes
-- Retrieve entered tasks
-   - Sort previously entered tasks by their tags
-   - Edit them if needed
-   - Mark their completion status
--  Get rewarded with a cup of coffee 
-   - As you mark a task as complete, a cup of coffee is delivered at the bottom of the screen
+- **Accomplishment class** (MVC model) keeps track of all the properties of your accomplishment entries.
+- Accomplishment objects (entries) can be created, edited, and deleted with MVC controller methods. 
+- DateTime of page (when loaded) displayed on screen for convenience and urgence. 
+- **DateTime matched (regex)** with future entries to show how long you have left to complete the task.
+- Entries are sortable with the help of a **LINQ query.**
+- Store entries **written and read from a SQL database** for ongoing projects.
 
-
-## Milestones
-
-- [x] Create a GitHub Repo and Start on a Project Plan
-- [ ] Scaffold a new .NET Core MVC Application
-- [ ] Write C# program
-- [ ] Generating a Code First Database
-- [ ] Creating CRUD Controllers
-- [ ] Creating CRUD Views
