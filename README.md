@@ -1,4 +1,4 @@
-# COMPLETION CAFE
+# COMPLETION CAFE ☕ 🥐 🥯
 
 
 ## Overview
