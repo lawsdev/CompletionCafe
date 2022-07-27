@@ -1,0 +1,8 @@
+@model IEnumerable<Accomplishment>
+
+
+<select name="Category">
+@foreach (var item in Model) {
+<option value="Category">@Html.DisplayFor(modelItem => item.Category)</option>
+}
+         
