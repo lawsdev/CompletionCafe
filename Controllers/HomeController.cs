@@ -13,11 +13,6 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    // public ActionResult Datetime()
-    // {
-    //     return (var fDt = DateTime.Now.ToString("f") ViewData["fDt"] = fDt;)
-    // }
-
     public IActionResult Index()
     {
         return View();

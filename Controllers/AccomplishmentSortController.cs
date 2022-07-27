@@ -19,6 +19,7 @@ namespace CompletionCafe.Controllers
             }
 
     //Sort Function: LINQ query
+    //Use a LINQ query to retrieve information from a data structure (such as a list or array) or file
         public async Task<IActionResult> Sort(string sortOrder)
         {
         ViewData["CategorySortParm"] = sortOrder == "Category" ? "category_desc" : "Category";

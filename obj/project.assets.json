@@ -9945,26 +9945,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bella\\.nuget\\packages\\": {}
+    "/Users/Isabella/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bella\\source\\Completion Cafe\\CompletionCafe\\CompletionCafe.csproj",
+      "projectUniqueName": "/Users/Isabella/Documents/isabella-code/CompletionCafe/CompletionCafe.csproj",
       "projectName": "CompletionCafe",
-      "projectPath": "C:\\Users\\Bella\\source\\Completion Cafe\\CompletionCafe\\CompletionCafe.csproj",
-      "packagesPath": "C:\\Users\\Bella\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bella\\source\\Completion Cafe\\CompletionCafe\\obj\\",
+      "projectPath": "/Users/Isabella/Documents/isabella-code/CompletionCafe/CompletionCafe.csproj",
+      "packagesPath": "/Users/Isabella/.nuget/packages/",
+      "outputPath": "/Users/Isabella/Documents/isabella-code/CompletionCafe/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bella\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/Isabella/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10028,7 +10026,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.107\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   },

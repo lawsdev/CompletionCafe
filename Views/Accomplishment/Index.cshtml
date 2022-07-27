@@ -6,15 +6,18 @@
 
 <h1 class="booger" style="color:green;">Indexboogyer</h1>
 
+
 <p>
     <a class="createnew" asp-action="Create">Create New</a>
     <a class="createnew" asp-action="_CreateCategory">Create New</a>
+    <p>Page Loaded at: @ViewBag.CurrentTime</p>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.Category) 
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)

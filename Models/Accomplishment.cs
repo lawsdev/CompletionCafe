@@ -24,8 +24,3 @@ public class UserCategory
     public string UserDefinedCategory { get; set; }
 }
 
-public class Dt 
-{
-    [Key]
-    public DateTime Dtview { get; set; }
-}

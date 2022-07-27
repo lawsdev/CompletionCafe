@@ -20,6 +20,8 @@ namespace CompletionCafe.Controllers
         // GET: Accomplishment
         public async Task<IActionResult> Index()
         {
+            thisDay();
+                
               return _context.Accomplishments != null ? 
                           View(await _context.Accomplishments.ToListAsync()) :
                           Problem("Entity set 'Context.Accomplishments'  is null.");
@@ -46,6 +48,15 @@ namespace CompletionCafe.Controllers
         // GET: Accomplishment/Create
         public IActionResult Create()
         {
+            return View();
+        }
+
+        public ActionResult thisDay()
+        {
+            var Dt = DateTime.Now;
+            string strDt = Dt.ToString("f");
+            ViewBag.CurrentTime = strDt;
+
             return View();
         }
 
