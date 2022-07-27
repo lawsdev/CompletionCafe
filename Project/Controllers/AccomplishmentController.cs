@@ -21,7 +21,7 @@ namespace CompletionCafe.Controllers
         public async Task<IActionResult> Index()
         {
             thisDay();
-                
+
               return _context.Accomplishments != null ? 
                           View(await _context.Accomplishments.ToListAsync()) :
                           Problem("Entity set 'Context.Accomplishments'  is null.");
@@ -45,14 +45,6 @@ namespace CompletionCafe.Controllers
             return View(accomplishment);
         }
 
-        public ActionResult thisDay()
-        {
-            var Dt = DateTime.Now;
-            string strDt = Dt.ToString("f");
-            ViewBag.CurrentTime = strDt;
-
-            return View();
-        }
         
         // GET: Accomplishment/Create
         public IActionResult Create()
@@ -65,10 +57,11 @@ namespace CompletionCafe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,DaysLeft,Description,Notes")] Accomplishment accomplishment)
-        {
+        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
+         {
             if (ModelState.IsValid)
             {
+                accomplishment.DaysLeft = Convert.ToString(TestDays(accomplishment.Date));
 
                 _context.Add(accomplishment);
                 await _context.SaveChangesAsync();
@@ -76,6 +69,31 @@ namespace CompletionCafe.Controllers
             }
             return View(accomplishment);
         }
+
+        public int TestDays(string dueDate){
+
+            int day  = Int32.Parse(dueDate.Substring(3,2));
+            int month = Int32.Parse(dueDate.Substring(0,2));
+            int year = Int32.Parse(dueDate.Substring(6,4));
+
+
+            DateTime DueDate_DT = new DateTime(year, month, day);
+            // String.Format("{0:MM/dd/yyyy}", due_dt);
+
+
+            return Convert.ToInt32((DueDate_DT - DateTime.Now).TotalDays);
+
+        }
+
+         public ActionResult thisDay()
+        {
+            var Dt = DateTime.Now;
+            string strDt = Dt.ToString("d");
+            ViewBag.CurrentTime = strDt;
+
+            return View();
+        }
+
 
 
 

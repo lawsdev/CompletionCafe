@@ -14,11 +14,11 @@ public class Accomplishment
     public bool Status { get; set; }
 
     [Required(ErrorMessage = "MM/DD/YYYY")]
-    [RegularExpression(@"^(?:[0][1-9]|[1-9]|[1][1-2])[-/](?:[0][1-9]|[1-9]|[12][0-9]|3[01])[-/](?:[2][0][0-9][0-9]|[0-9][0-9]\b)",
+    [RegularExpression(@"^(?:[0][1-9]|[1-9]|[1][0-2])[-/](?:[0][1-9]|[1-9]|[12][0-9]|3[01])[-/](?:[2][0][0-9][0-9]|[0-9][0-9]\b)",
     ErrorMessage = "Invalid Date Format")]
     public string Date { get; set; }
-    public string DaysLeft { get; set; }
- 
+
+    public string? DaysLeft { get; set; }
 
     public string? Description { get; set; }
     public string? Notes { get; set; } 
