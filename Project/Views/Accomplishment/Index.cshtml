@@ -11,7 +11,9 @@
     <a class="createnew" asp-action="Create">Create New</a>
     <a class="createnew" asp-action="_CreateCategory">Create New</a>
     <p>Page Loaded at: @ViewBag.CurrentTime</p>
+    <img src="https://www.pngmart.com/files/4/Croissant-Transparent-PNG.png" width="100px">
 </p>
+
 
 <table class="table">
     <thead>
@@ -43,10 +45,21 @@
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
+                @if(item.Status == true){
+                    <script type="text/javascript">
+                    var total_images = 3;
+                    var random_number = Math.floor((Math.random()*total_images));
+                    var random_img = new Array();
+                    random_img[0] = '<a href="page1.html"><img src="https://www.pngmart.com/files/4/Croissant-PNG-File.png" width="50px"></a>';
+                    random_img[1] = '<a href="page2.html"><img src="https://pngimg.com/uploads/mug_coffee/mug_coffee_PNG16855.png" width="50px"></a>';
+                    random_img[2] = '<a href="page3.html"><img src="https://pennsyderm.com/wp-content/uploads/Green-Tea-PNG.png" width="50px"></a>';
+                    document.write(random_img[random_number]);
+                    </script>
+                    }
+                @if(item.Status == false){<p>not complete!</p>}
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DaysLeft) days left until @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)

@@ -10,7 +10,6 @@ public class Accomplishment
     [Key]
     public int ID { get; set; }
     public string Category { get; set; }
-    //category should be user defined
     public bool Status { get; set; }
 
     [Required(ErrorMessage = "MM/DD/YYYY")]

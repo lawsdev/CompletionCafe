@@ -21,15 +21,27 @@ namespace CompletionCafe.Controllers
         public async Task<IActionResult> Index()
         {
             thisDay();
+            // DateCalculationDynamic();
 
               return _context.Accomplishments != null ? 
                           View(await _context.Accomplishments.ToListAsync()) :
                           Problem("Entity set 'Context.Accomplishments'  is null.");
         }
 
+        // public async Task<IActionResult> DateCalculationDynamic(string? DaysLeft)
+        // {
+        //     if (DaysLeft =! null || _context.Accomplishments =! null)
+        //     {
+        //         accomplishment.DaysLeft = Convert.ToString(TestDays(accomplishment.Date));
+        //         return ();
+        //     }
+            
+        // }
+
         // GET: Accomplishment/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            
             if (id == null || _context.Accomplishments == null)
             {
                 return NotFound();
@@ -37,14 +49,42 @@ namespace CompletionCafe.Controllers
 
             var accomplishment = await _context.Accomplishments
                 .FirstOrDefaultAsync(m => m.ID == id);
+            
             if (accomplishment == null)
             {
                 return NotFound();
             }
 
+            if (ModelState.IsValid)
+            {
+                accomplishment.DaysLeft = Convert.ToString(TestDays(accomplishment.Date));
+            }
+            
             return View(accomplishment);
         }
 
+        //DateTime Communicates with REGEX to calculate days until/days since
+        public int TestDays(string dueDate){
+
+            int day  = Int32.Parse(dueDate.Substring(3,2));
+            int month = Int32.Parse(dueDate.Substring(0,2));
+            int year = Int32.Parse(dueDate.Substring(6,4));
+
+            DateTime DueDate_DT = new DateTime(year, month, day);
+            // String.Format("{0:MM/dd/yyyy}", due_dt);
+
+            return Convert.ToInt32((DueDate_DT - DateTime.Now).TotalDays);
+
+        }
+
+        public ActionResult thisDay()
+        {
+            var Dt = DateTime.Now;
+            string strDt = Dt.ToString("d");
+            ViewBag.CurrentTime = strDt;
+
+            return View();
+        }
         
         // GET: Accomplishment/Create
         public IActionResult Create()
@@ -57,11 +97,11 @@ namespace CompletionCafe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
+        public async Task<IActionResult> Create([Bind("ID,Category,Status,Date,DaysLeft,Description,Notes")] Accomplishment accomplishment)
          {
             if (ModelState.IsValid)
             {
-                accomplishment.DaysLeft = Convert.ToString(TestDays(accomplishment.Date));
+                // accomplishment.DaysLeft = Convert.ToString(TestDays(accomplishment.Date));
 
                 _context.Add(accomplishment);
                 await _context.SaveChangesAsync();
@@ -70,68 +110,41 @@ namespace CompletionCafe.Controllers
             return View(accomplishment);
         }
 
-        public int TestDays(string dueDate){
+        // //CreatePartial
+        // public IActionResult CreatePartial()
+        // {
+        //     return PartialView("_Create");
+        // }
 
-            int day  = Int32.Parse(dueDate.Substring(3,2));
-            int month = Int32.Parse(dueDate.Substring(0,2));
-            int year = Int32.Parse(dueDate.Substring(6,4));
-
-
-            DateTime DueDate_DT = new DateTime(year, month, day);
-            // String.Format("{0:MM/dd/yyyy}", due_dt);
-
-
-            return Convert.ToInt32((DueDate_DT - DateTime.Now).TotalDays);
-
-        }
-
-         public ActionResult thisDay()
-        {
-            var Dt = DateTime.Now;
-            string strDt = Dt.ToString("d");
-            ViewBag.CurrentTime = strDt;
-
-            return View();
-        }
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public async Task<IActionResult> CreatePartial([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _context.Add(accomplishment);
+        //         await _context.SaveChangesAsync();
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View(accomplishment);
+        // }
 
 
+        // // GET: Accomplishment/Edit/5
+        // public async Task<IActionResult> Edit(int? id)
+        // {
+        //     if (id == null || _context.Accomplishments == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-
-        //CreatePartial
-        public IActionResult CreatePartial()
-        {
-            return PartialView("_Create");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreatePartial([Bind("ID,Category,Status,Date,Description,Notes")] Accomplishment accomplishment)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(accomplishment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(accomplishment);
-        }
-
-
-        // GET: Accomplishment/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Accomplishments == null)
-            {
-                return NotFound();
-            }
-
-            var accomplishment = await _context.Accomplishments.FindAsync(id);
-            if (accomplishment == null)
-            {
-                return NotFound();
-            }
-            return View(accomplishment);
-        }
+        //     var accomplishment = await _context.Accomplishments.FindAsync(id);
+        //     if (accomplishment == null)
+        //     {
+        //         return NotFound();
+        //     }
+        //     return View(accomplishment);
+        // }
 
         // POST: Accomplishment/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
