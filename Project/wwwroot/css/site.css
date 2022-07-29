@@ -1,3 +1,16 @@
+body
+{
+font: "Trebuchet MS", Verdana, sans-serif;
+background-color: #eb9fef;
+color: black;
+}
+
+h1.booger 
+{
+font-family: "Lucida Console", monospace;
+color: rgb(160, 0, 80);
+}
+
 html {
   font-size: 14px;
 }

@@ -11,5 +11,4 @@ public class Context : DbContext
    
    public DbSet<Accomplishment>? Accomplishments { get;set; }
 
-   public DbSet<UserCategory>? UserCategorys { get;set; }
 }

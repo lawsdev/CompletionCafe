@@ -4,62 +4,63 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="booger" style="color:green;">Indexboogyer</h1>
-
+<h1 class="booger">Welcome to Completion Cafe</h1>
 
 <p>
     <a class="createnew" asp-action="Create">Create New</a>
-    <a class="createnew" asp-action="_CreateCategory">Create New</a>
-    <p>Page Loaded at: @ViewBag.CurrentTime</p>
-    <img src="https://www.pngmart.com/files/4/Croissant-Transparent-PNG.png" width="100px">
+    <p>Page Loaded at: @DateTime.Now</p>
+    <img src="https://c.tenor.com/EFtO6Gv3vX4AAAAM/coffee-steaming.gif" width="100px">
 </p>
 
-
 <table class="table">
-    <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Category) 
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
-            <th>
-            <partial name="~/Views/Accomplishment/_Category.cshtml" />
-            </th>
-        </tr>
-    </thead>
-    <tbody>
+        <th>
+            <a asp-controller="Accomplishment" asp-action="Sort" asp-route-sortOrder="@ViewData["CategorySortParm"]">@Html.DisplayNameFor(model => model.Category)</a>
+        </th>
+        <th>
+            <a asp-controller="Accomplishment" asp-action="Sort" asp-route-sortOrder="@ViewData["StatusSortParm"]">@Html.DisplayNameFor(model => model.Status)</a>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaysLeft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+    </tr>
 @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Status)
+@* visualize bool Status as images *@
                 @if(item.Status == true){
                     <script type="text/javascript">
-                    var total_images = 3;
+                    var total_images = 6;
                     var random_number = Math.floor((Math.random()*total_images));
                     var random_img = new Array();
                     random_img[0] = '<a href="page1.html"><img src="https://www.pngmart.com/files/4/Croissant-PNG-File.png" width="50px"></a>';
                     random_img[1] = '<a href="page2.html"><img src="https://pngimg.com/uploads/mug_coffee/mug_coffee_PNG16855.png" width="50px"></a>';
                     random_img[2] = '<a href="page3.html"><img src="https://pennsyderm.com/wp-content/uploads/Green-Tea-PNG.png" width="50px"></a>';
+                    random_img[3] = '<a href="page3.html"><img src="http://assets.stickpng.com/thumbs/584fcc806a5ae41a83ddee8c.png" width="50px"></a>';
+                    random_img[4] = '<a href="page3.html"><img src="https://www.kolacheshoppe.com/wp-content/uploads/2018/07/Kolache-Shoppe-Luling-Sausage-Cheese.png" width="50px"></a>';
+                    random_img[5] = '<a href="page3.html"><img src="http://assets.stickpng.com/images/580b57fbd9996e24bc43c0e0.png" width="50px"></a>';
+                    
                     document.write(random_img[random_number]);
                     </script>
                     }
-                @if(item.Status == false){<p>not complete!</p>}
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaysLeft)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
@@ -73,7 +74,6 @@
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-        }
-
+}
     </tbody>
 </table>

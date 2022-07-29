@@ -595,12 +595,6 @@ C:/Users/Bella/source/Completion Cafe/CompletionCafe/bin/Debug/net6.0/Microsoft.
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Humanizer.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/MessagePack.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/MessagePack.Annotations.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/System.Web.Mvc.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/System.Web.Razor.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/System.Web.Helpers.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/System.Web.WebPages.Deployment.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/System.Web.WebPages.Razor.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/System.Web.WebPages.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.AspNetCore.Razor.Language.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.Build.Locator.dll
@@ -644,7 +638,6 @@ C:/Users/Bella/source/Completion Cafe/CompletionCafe/bin/Debug/net6.0/Microsoft.
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.Web.Infrastructure.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/Isabella/Documents/isabella-code/CompletionCafe/Project/bin/Debug/net6.0/NuGet.Common.dll

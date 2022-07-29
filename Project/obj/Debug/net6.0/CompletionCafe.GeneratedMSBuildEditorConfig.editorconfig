@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/Isabella/Documents/isabella-code/CompletionCafe/Project
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Accomplishment/AccomplishmentHome.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvQWNjb21wbGlzaG1lbnRIb21lLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Accomplishment/Cafe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvQ2FmZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -39,16 +35,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Accomplishment/_Category.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvX0NhdGVnb3J5LmNzaHRtbA==
+[/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Accomplishment/Sort.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvU29ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Accomplishment/_Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvX0NyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Accomplishment/_CreateCategory.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnQvX0NyZWF0ZUNhdGVnb3J5LmNzaHRtbA==
+[/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/AccomplishmentSort/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb21wbGlzaG1lbnRTb3J0L0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/Isabella/Documents/isabella-code/CompletionCafe/Project/Views/Home/Index.cshtml]

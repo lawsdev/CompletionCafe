@@ -30,16 +30,13 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td title="@ViewBag.CurrentTime">
-                @Html.DisplayFor(modelItem => item.DaysLeft) days until @Html.DisplayFor(modelItem => item.Date) 
+                @ViewBag.CurrentTime days until @Html.DisplayFor(modelItem => item.Date) 
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
