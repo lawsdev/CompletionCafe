@@ -20,7 +20,13 @@ A place to keep record of your accomplishments, in progress or complete. A websi
 - **Accomplishment class** (MVC model) keeps track of all the properties of your accomplishment entries.
 - Accomplishment objects (entries) can be created, edited, and deleted with MVC controller methods. 
 - DateTime of page (when loaded) displayed on screen for convenience and urgence. 
-- **DateTime matched (regex)** with future entries to show how long you have left to complete the task.
+- **DateTime matched (regex)** with future entries to show how long you have left to complete the task. (Or show how many days it's been since a past entry.)
 - Entries are sortable with the help of a **LINQ query.**
 - Store entries **written and read from an SQL database** for ongoing projects.
 
+## Future Implementations
+
+- Fix sort by date functionality
+- Add different users
+- Host on Herokuapp
+- Update site Html/Css
