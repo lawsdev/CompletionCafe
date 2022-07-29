@@ -1,5 +1,11 @@
 # COMPLETION CAFE ☕ 🥐 🥯
 
+## Instructions
+- git clone repository
+- change directory into the project folder located in the root directory
+- dotnet run
+- access https://localhost:7107
+- Welcome !
 
 ## Overview
 A place to keep record of your accomplishments, in progress or complete. A website written in C# that stores user data to log your tasks and reward you with a cup of coffee or a pastry. 
