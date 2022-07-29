@@ -26,7 +26,7 @@ A place to keep record of your accomplishments, in progress or complete. A websi
 
 ## Future Implementations
 
-- Fix sort by date functionality
-- Add different users
-- Host on Herokuapp
-- Update site Html/Css
+- Fix sort by date functionality.
+- Add different users.
+- Host on Herokuapp.
+- Update site Html/Css.
